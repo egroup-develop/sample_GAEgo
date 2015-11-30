@@ -7,15 +7,17 @@
 		<title>tester</title>
 		<link href="sample.css" rel="stylesheet" type="text/css" />
 	</head>
-	<body ng-app>
-		<div ng-controller="SampleController">
-			<div class="saori"><button ng-click="click()"><img src="saori1.jpg" width="500px"></button>
-				<p>{{message1}}</p></div>
-		</div>
-		<div ng-controller="SampleController">
-			<div class="saori"><button ng-click="click()"><img src="saori2.jpg" width="500px"></button>
-				<p>{{message2}}</p></div>
-		</div>
-	</body>
-</html>
+	<body>
+		<div ng-app='myApp' ng-controller="mainCtrl">
+			You choise <span style="font-weight:bold" id="value"></span>
+			<div ng-repeat="item in items">
+				<ul class="list">
+					<li>{{item.value}}</li>
+					<button ng-click='ClickFunction(item.value)'>
+						<img src={{item.fileName}} width="500px" id="value">
+					</button>
+				</div>
+			</div>
+		</body>
+	</html>
 
