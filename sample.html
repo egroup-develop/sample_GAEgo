@@ -13,15 +13,11 @@
 			<div ng-repeat="item in items">
 				<ul class="list">
 					<li>{{item.value}}</li>
-					<!--<div class="saori"><button ng-click='click()'><img src="saori1.jpg" width="500px"></button></div>
+					<button ng-click='ClickFunction(item.value)'>
+						<img src={{item.fileName}} width="500px" id="value">
+					</button>
 				</div>
-				<div ng-controller="SampleController">
-					<div class="saori"><button ng-click='click()'><img src="saori2.jpg" width="500px"></button></div>-->
-				</ul>
-				<button ng-click='ClickFunction(item.value)'><img src="saori1.jpg" width="500px" id="value"></button>
-				<button ng-click='ClickFunction(item.value)'><img src="saori2.jpg" width="500px" id="value"></button>
 			</div>
-		</div>
-	</body>
-</html>
+		</body>
+	</html>
 
