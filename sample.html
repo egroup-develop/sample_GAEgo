@@ -11,10 +11,11 @@
 		<div ng-app='myApp' ng-controller="mainCtrl">
 			You choise <span style="font-weight:bold" id="value"></span>
 			<div ng-repeat="item in items">
-				<ul class="list">
-					<li>{{item.value}}</li>
+				
+			<ul class="list">
+					<li>{{item.Id}}</li>
 					<button ng-click='ClickFunction(item.value)'>
-						<img src={{item.fileName}} width="500px" id="value">
+						<img src={{item.Url}} width="500px" id="value">
 					</button>
 				</div>
 			</div>
