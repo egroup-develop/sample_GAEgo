@@ -1,16 +1,43 @@
+var img_arr = new Array();
+var choise_arr = new Array();
+var count = 0;
+var items = new Array();
+
 var app = angular.module('myApp', []);
 app.controller('mainCtrl', function($scope,$http) {
-	/*$scope.items = [{"Id":"test"}];*/
-	$scope.getUsersFromLocal = function() {
-		$http({method: 'GET', url:'http://localhost:8000/out.json', headers:{"Content-Type":'application/json'}}).
-	success(function(data) {
-		$scope.items = data;
-	});
-	};
-
-	$scope.getUsersFromLocal(); //call ajax method
+  $scope.getUsersFromLocal = function() {
+    $http({method: 'GET', url:'https://study-golang.appspot.com/outjson?myname=hiroki&portalname=logirl&start=0&limit=2&category=Daily%2BLoGiRL', headers:{"Content-Type":'application/json'}}).
+      success(function(data) {
+	  // $scope.items = data;
+	  items = data;
+	for(i=0;i<2;i++){
+	  choise_arr.push({"Url":data[i].Url[0] ,"Title":data[i].Title,"Id":data[i].Id});
+	}
+	count++;
+	console.log("choise:" + choise_arr);
+	$scope.choise = choise_arr;
+      });
+  };
+    
+    
+  $scope.getUsersFromLocal(); //call ajax method
+    
+  $scope.ClickFunction = function(val,index) {
+    angular.element(document.querySelector('#Title')).text(val);
+    if(count<=items[0].Url.length){
+      img_arr.push(index);
+      if(count < items[0].Url.length){
+	choise_arr.length = 0;
+	choise_arr.push.apply(choise_arr, []);
+	for(i=0;i<2;i++){
+	  choise_arr.push({"Url":items[i].Url[count] ,"Title":items[i].Title,"Id":items[i].Id});
+	}
+	$scope.choise = choise_arr;
+      }
+  count++;
+    }else{
+      console.log("server送信");
+    }
+    console.log("log:" + img_arr);
+  }
 });
-/*$scope.ClickFunction = function(val) {
-	angular.element(document.querySelector('#Id')).text(val);
-}
-}]);*/
