@@ -1,4 +1,5 @@
 <html>
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
@@ -21,3 +22,29 @@
     </div>
   </body>
 </html>
+=======
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<script type="text/javascript" src="test.js"></script>
+		<title>tester</title>
+		<link href="sample.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div ng-app='myApp' ng-controller="mainCtrl">
+			You choise <span style="font-weight:bold" id="Id"></span>
+			<div ng-repeat="item in items">
+				
+			<ul class="list">
+					<li>{{item.Id}}</li>
+					<button ng-click='ClickFunction(item.Id)'>
+						<img src={{item.Url}} width="500px" id="Id">
+					</button>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+
+>>>>>>> temp1
