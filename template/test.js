@@ -8,7 +8,7 @@ app.controller('mainCtrl', function($scope,$http) {
   $scope.getUsersFromLocal = function() {
     $http({
       method: 'GET',
-      url: 'https://study-golang.appspot.com/outjson?myname=hiroki&portalname=logirl&start=5&limit=7&category=Daily%2BLoGiRL',
+      url: 'https://study-golang.appspot.com/outjson?myname=hiroki&portalname=logirl&start=10&limit=12&category=Daily%2BLoGiRL',
       headers: {"Content-Type":'application/json'}
     }).
     success(function(data) {
@@ -39,7 +39,8 @@ app.controller('mainCtrl', function($scope,$http) {
         $scope.choise = choise_arr;
       }
       count++;
-    }else{
+    }
+    if(count>items[0].Url.length){
       $http({
         method: 'POST',
         url: '/api/',
