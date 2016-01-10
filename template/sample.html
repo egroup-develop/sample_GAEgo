@@ -9,12 +9,12 @@
 	</head>
 	<body>
 		<div ng-app='myApp' ng-controller="mainCtrl">
-			You choise <span style="font-weight:bold" id="title"></span>
+			 Last choised: <span style="font-weight:bold" id="title"></span>
 			<div ng-repeat="item in choise">
 				<ul class="list">
-					<li>{{item.Title}}</li>
-					<button ng-click='ClickFunction(item.Title,item.Id)'>
-						<img src={{item.Url}} width="500px">
+					<li>{{item.Name}}</li>
+					<button ng-click='ClickFunction(item.Name,item.Index)'>
+						<img src={{item.ImageUrl}} width="500px">
 					</button>
 				</ul>
 			</div>

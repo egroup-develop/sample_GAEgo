@@ -4,9 +4,6 @@ runtime: go
 api_version: go1
 
 handlers:
-- url: /js
-  static_dir: js
-
 - url: /template
   static_dir: template
 
@@ -16,3 +13,5 @@ handlers:
 - url: /.*
   static_files: template/sample.html
   upload: template/sample.html
+
+
